@@ -74,7 +74,7 @@ def create_reservation(request):
 def cancel_reservation(request, id):
     if request.method == "POST":
 
-        room = Room.objects.get(pk=id)
+        room = Room()
 
         reservation = Reservation.objects.get(pk=id)
         reservation.delete()
