@@ -9,19 +9,20 @@ from room.models import Room
 
 # Display all Reservation created of the Client
 class ListReservation(ListView):
-    models = Reservation
+    model = Reservation
     template_name = ""
     context_object_name = "reservations"
 
 
 # Show specification a reservation in the Room
 class DetailReservation(DetailView):
-    models = Reservation
+    model = Reservation
     template_name = ""
     context_object_name = "reservation"
 
 
 # Create a reservation of a Room in the Hotel
+@login_required
 def create_reservation(request):
     if request.method == "POST":
 
@@ -71,6 +72,7 @@ def create_reservation(request):
 
 
 # Client cancel reservation in the Room
+@login_required
 def cancel_reservation(request, id):
     if request.method == "POST":
 

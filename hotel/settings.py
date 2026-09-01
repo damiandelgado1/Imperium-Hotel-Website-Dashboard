@@ -26,7 +26,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'client',
-    'room'
+    'room',
+    'reservation',
+    'order',
+    'menu_item'
 ]
 
 MIDDLEWARE = [
