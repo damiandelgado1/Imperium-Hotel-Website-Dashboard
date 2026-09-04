@@ -1,0 +1,19 @@
+<h3> MODIFICAR ESTADO DE LA HABITACION {{ room.number }} </h3>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    <div>
+        <label for="{{ form.availability.id_for_label }}"> ESTADO DE DISPONIBILIDAD </label> <br>
+        {{ form.availability }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.price.id_for_label }}"> PRECIO DE LA HABITACION </label> <br>
+        {{ form.price }}
+    </div>
+    <br>
+
+    <button> MODIFICAR ESTADO </button>
+</form>

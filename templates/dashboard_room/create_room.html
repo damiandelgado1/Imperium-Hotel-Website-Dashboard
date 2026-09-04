@@ -1,0 +1,48 @@
+<h3> CREAR HABITACION </h3>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    <div>
+        <label for="{{ form.number.id_for_label }}"> NRO. DE LA HABITACION </label> <br>
+        {{ form.number }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.preview.id_for_label }}"> DESCRIPCION DE PREVISUALIZACION </label> <br>
+        {{ form.preview }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.description.id_for_label }}"> DESCRIPCION DE LA HABITACION </label> <br>
+        {{ form.number }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.bedroom.id_for_label }}"> NUMERO DE DORMITORIOS </label> <br>
+        {{ form.bedroom }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.bathroom.id_for_label }}"> BAÑOS </label> <br>
+        {{ form.bathroom }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.availability.id_for_label }}"> ESTADO DE DISPONIBILIDAD </label> <br>
+        {{ form.availability }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.price.id_for_label }}"> PRECIO DE LA HABITACION </label> <br>
+    </div>
+    <br>
+
+    <button> CREAR HABITACION </button>
+</form>

@@ -1,0 +1,16 @@
+<h3> HABITACIONES DISPONIBLES </h3>
+
+{% block room %}
+
+    {% for room in rooms %}
+        <article>
+            {% comment %} <img src=""> {% endcomment %}
+            <h5> Habitacion {{ room.number }} </h5>
+            <p> {{ room.preview }} </p>
+            <p> {{ room.availability }} </p>
+            <p> {{ room.price }} </p>
+            <a href="{% url 'room:detail_room' room.pk %}"> VER MAS </a>
+        </article>
+    {% endfor %}
+
+{% endblock %}

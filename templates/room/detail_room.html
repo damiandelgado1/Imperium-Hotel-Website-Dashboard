@@ -1,0 +1,10 @@
+<article>
+    <h3> {{ room.number }} </h3>
+    <p> {{ room.description }} </p>
+    <p> DORMITORIOS: {{ room.bedroom }} </p>
+    <p> BAÑOS: {{ room.bathroom }} </p>
+    <p> ESTADO DE DISPONIBILIDAD: {{ room.availability }} </p>
+    <p> PRECIO: {{ room.price }} </p>
+
+    <a href="{% url 'reservation:create_reservation' %}"> RESERVAR HABITACION </a>
+</article>
