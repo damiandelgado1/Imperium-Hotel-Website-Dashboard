@@ -1,0 +1,16 @@
+<h3> RESERVAS CREADAS </h3>
+
+{% block reservation %}
+
+    {% for reservation in reservations %}
+        <article>
+            {% comment %} <img src=""> {% endcomment %}
+            <h3> Reserva en la Habitacion Nro. {{ room.number }} </h3>
+            <p> Reservado por: {{ client.first_name }} </p>
+            <p> Fecha de Entrada: {{ reservation.enter }} </p>
+            <p> Fecha de Salida: {{ reservation.exit }} </p>
+            <a href="{% url 'reservation:detail_reservation' reservation.pk %}"> VER RESERVA </a>
+        </article>
+    {% endfor %}
+
+{% endblock %}

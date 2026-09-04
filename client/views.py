@@ -112,6 +112,7 @@ def login_client(request):
 
         else:
             messages.add_message(request, messages.INFO, 'Revisa los datos ingresados')
+            return render(request, "home/login.html", {"form": form})
 
     else:
         form = Login()

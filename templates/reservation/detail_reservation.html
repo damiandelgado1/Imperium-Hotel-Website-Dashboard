@@ -1,0 +1,11 @@
+<article>
+    <h3> RESERVA DE LA HABITACION Nro. {{ room.number }} </h3>
+    {% comment %} <img src=""> {% endcomment %}
+    <p> Habitacion reservada por {{ client.first_name }} </p>
+    <p> Nro. de Personas que asisten: {{ reservation.people }} </p>
+    <p> Fecha de Entrada: {{ reservation.enter }} </p>
+    <p> Fecha de Salida: {{ reservation.exit }} </p>
+    <p> Total pagado: {{ reservation.payment }} </p>
+
+    <a href="{% url 'reservation:delete_reservation' reservation.pk %}"> CANCELAR RESERVA </a>
+</article>

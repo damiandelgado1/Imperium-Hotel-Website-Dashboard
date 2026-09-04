@@ -10,14 +10,14 @@ from room.models import Room
 # Display all Reservation created of the Client
 class ListReservation(ListView):
     model = Reservation
-    template_name = ""
+    template_name = "reservation/list_reservation.html"
     context_object_name = "reservations"
 
 
 # Show specification a reservation in the Room
 class DetailReservation(DetailView):
     model = Reservation
-    template_name = ""
+    template_name = "reservation/detail_reservation.html"
     context_object_name = "reservation"
 
 
@@ -38,20 +38,20 @@ def create_reservation(request):
             payment = form.cleaned_data["payment"]
 
             if enter == '':
-                messages.add(request, messages.INFO, "La fecha de salida no puede quedar vacia")
-                return render(request, "")
+                messages.add_message(request, messages.INFO, "La fecha de salida no puede quedar vacia")
+                return render(request, "reservation/create_reservation.html")
 
             elif exit > enter:
-                messages.add(request, messages.INFO, "La fecha de salida no debe ser antes que la entrada")
-                return render(request, "")
+                messages.add_message(request, messages.INFO, "La fecha de salida no debe ser antes que la entrada")
+                return render(request, "reservation/create_reservation.html")
 
             elif people > room.bedroom:
-                messages.add(request, messages.INFO, "El numero de personas supera el maximo que permite la Habitacion")
-                return render(request, "")
+                messages.add_message(request, messages.INFO, "El numero de personas supera el maximo que permite la Habitacion")
+                return render(request, "reservation/create_reservation.html")
 
             elif payment < room.price:
-                messages.add(request, messages.INFO, "El pago por la Habitacion a reservar es bajo")
-                return render(request, "")
+                messages.add_message(request, messages.INFO, "El pago por la Habitacion a reservar es bajo")
+                return render(request, "reservation/create_reservation.html")
 
             else:
                 reservation = Reservation.objects.create(
@@ -62,13 +62,18 @@ def create_reservation(request):
                     exit = exit,
                     payment = payment
                 )
-                messages.add(request, messages.SUCCESS, f"Reserva en la Habitacion {room.number} confirmada")
-                return render(request, "", reservation)
+                messages.add_message(request, messages.SUCCESS, f"Reserva en la Habitacion {room.number} confirmada")
+                return render(request, "reservation/create_reservation.html", {"reservation": reservation})
 
         else:
             form = Reservation()
-            messages.add(request, messages.INFO, "")
-            return render(request, "")
+            messages.add_message(request, messages.INFO, "Ingrese correctamente los datos para realizar la Reserva")
+            return render(request, "reservation/create_reservation.html", {"reservation": reservation})
+
+    else:
+        form = Reservation()
+        messages.add_message(request, messages.INFO, "Ingrese los datos para realizar la Reserva")
+        return render(request, "reservation/create_reservation.html", {"form": form})
 
 
 # Client cancel reservation in the Room
@@ -81,5 +86,5 @@ def cancel_reservation(request, id):
         reservation = Reservation.objects.get(pk=id)
         reservation.delete()
 
-        messages.add(request, messages.SUCCESS, f"La reserva en la Habitacion {room.number} se ha Cancelado")
-        return render(request, "")
+        messages.add_message(request, messages.SUCCESS, f"La reserva en la Habitacion {room.number} se ha Cancelado")
+        return render(request, "reservation/cancel_reservation.html")
