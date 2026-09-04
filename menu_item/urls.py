@@ -11,5 +11,5 @@ urlpatterns = [
     path('create/', CreateMenuItem.as_view(), name="create_item"),
     path('modify/<int:pk>/', ModifyMenuItem.as_view(), name="modify_item"),
     path('delete/<int:pk>/', DeleteMenuItem.as_view(), name="delete_item"),
-    path('admin/', admin.site.url)
+    path('admin/', admin.site.urls)
 ]

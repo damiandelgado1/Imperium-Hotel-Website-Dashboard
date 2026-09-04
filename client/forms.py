@@ -22,4 +22,5 @@ class Register(forms.Form):
 # Login Client in the Hotel
 class Login(forms.Form):
     username = forms.CharField(max_length=20)
+    email = forms.EmailField()
     password2 = forms.CharField(widget=forms.PasswordInput)

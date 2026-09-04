@@ -1,0 +1,49 @@
+<h3> IMPERIUM HOTEL </h3>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    <div>
+        <label for="{{ form.first_name.id_for_label }}"> NOMBRE </label> <br>
+        {{ form.first_name }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.last_name.id_for_label }}"> APELLIDO </label> <br>
+        {{ form.last_name }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.username.id_for_label }}"> NOMBRE DE USUARIO </label> <br>
+        {{ form.username }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.email.id_for_label }}"> EMAIL </label> <br>
+        {{ form.email }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.is_properly.id_for_label }}"> ¿ES PROPIETARIO? </label> <br>
+        {{ form.is_properly }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.password1.id_for_label }}"> CONTRASEÑA </label> <br>
+        {{ form.password1 }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.password2.id_for_label }}"> CONFIRMAR CONTRASEÑA </label> <br>
+        {{ form.password2 }}
+    </div>
+    <br>
+
+    <button> REGISTRARSE </button>
+</form>

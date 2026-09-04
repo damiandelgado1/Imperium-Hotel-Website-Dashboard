@@ -1,0 +1,25 @@
+<h3> INICIAR SESION </h3>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    <div>
+        <label for="{{ form.username.id_for_label }}"> NOMBRE DE USUARIO </label> <br>
+        {{ form.username }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.email.id_for_label }}"> EMAIL </label> <br>
+        {{ form.email }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.password2.id_for_label }}"> CONTRASEÑA </label> <br>
+        {{ form.password2 }}
+    </div>
+    <br>
+
+    <button> INICIAR SESION </button>
+</form>

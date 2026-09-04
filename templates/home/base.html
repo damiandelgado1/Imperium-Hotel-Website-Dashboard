@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title> Imperium Hotel </title>
+</head>
+<body>
+    <!-- Navbar to visit different link -->
+    <header>
+        <nav>
+            <a href="{% url 'about_us' %}"> SOBRE NOSOTROS </a>
+            <a href="{% url 'room:list_room' %}"> HABITACIONES </a>
+            <a href="{% url 'client:register_client' %}"> REGISTRARSE </a>
+            <a href="{% url 'client:login_client' %}"> INICIAR SESION </a>
+        </nav>
+    </header>
+
+    <!-- Description of the Hotel -->
+    <main>
+        {% include 'home/home.html' %}
+
+        <!-- Display all Room availability in the Hotel -->
+
+        <section>
+            {% block room %}{% endblock %}
+        </section>
+
+        <!-- Link to Restaurant -->
+        {% include "home/restaurant.html" %}
+    </main>
+
+    <!-- Contact Form to contact a the Hotel -->
+    <footer>
+        {% block contact %}{% endblock %}
+    </footer>
+</body>
+</html>

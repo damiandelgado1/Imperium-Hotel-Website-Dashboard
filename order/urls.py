@@ -10,5 +10,5 @@ urlpatterns = [
     path('detail/<int:pk>/', DetailOrder.as_view(), name="detail_order"),
     path('create/', create_order, name="create_order"),
     path('delete/<int:pk>/', cancel_order, name="delete_order"),
-    path('admin/', admin.site.url)
+    path('admin/', admin.site.urls)
 ]
