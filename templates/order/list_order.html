@@ -1,0 +1,13 @@
+<h3> ORDENES REALIZADAS </h3>
+
+<section>
+    {% for order in orders %}
+        <article>
+            <h5> ORDEN: {{ order.name }} </h5>
+            <p> PEDIDO POR: {{ client.first_name }} </p>
+            <p> CANTIDAD PEDIDA: {{ order.amount }} </p>
+            <p> PAGO TOTAL: {{ order.payment }} </p>
+            <a href="{% url 'order:detail_order' order.pk %}"> VER ORDEN </a>
+        </article>
+    {% endfor %}
+</section>

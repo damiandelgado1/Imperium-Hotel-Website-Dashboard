@@ -1,0 +1,9 @@
+<!-- Show information of the Orden create in Restaurant -->
+<article>
+    <h3> {{ order.name }} </h3>
+    {% comment %} <img src=""> {% endcomment %}
+    <p> PEDIDO POR: {{ client.first_name }} </p>
+    <p> CANTIDAD PEDIDO: {{ order.amount }} </p>
+    <p> PAGO TOTAL: {{ order.payment }} </p>
+    <a href="{% url 'order:delete_order' order.pk %}"> CANCELAR ORDEN </a>
+</article>

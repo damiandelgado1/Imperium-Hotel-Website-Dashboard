@@ -4,6 +4,6 @@ from .models import Order
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ["order", "amount", "state", "payment"]
-    list_filter = ["order", "state", "payment"]
-    search_fields = ["order"]
+    list_display = ["name", "amount", "payment"]
+    list_filter = ["name"]
+    search_fields = ["name"]

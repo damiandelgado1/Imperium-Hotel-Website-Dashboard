@@ -1,0 +1,25 @@
+<h3> ORDERNAR PLATO: {{ order.name }} </h3>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    <div>
+        <label for="{{ form.name.id_for_label }}"> NOMBRE DE LA ORDEN </label> <br>
+        {{ form.name }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.amount.id_for_label }}"> INDIQUE LA CANTIDAD QUE QUIERE DE ESTE PLATO </label> <br>
+        {{ form.amount }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.payment.id_for_label }}"> INGRESE EL TOTAL A PAGAR </label> <br>
+        {{ form.payment }}
+    </div>
+    <br>
+
+    <button> ORDENAR PLATO </button>
+</form>
