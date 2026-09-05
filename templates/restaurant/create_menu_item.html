@@ -1,0 +1,30 @@
+<h3> CREAR NUEVO PLATO </h3>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    <div>
+        <label for="{{ form.name.id_for_label }}"> NOMBRE DEL PLATO </label> <br>
+        {{ form.name }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.description.id_for_label }}"> DESCRIPCION DEL PLATO </label> <br>
+        {{ form.description }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.availability.id_for_label }}"> DISPONIBILIDAD </label> <br>
+        {{ form.availability }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.price.id_for_label }}"> PRECIO </label> <br>
+    </div>
+    <br>
+
+    <button> CREAR PLATO </button>
+</form>

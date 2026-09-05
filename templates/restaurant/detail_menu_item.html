@@ -1,0 +1,12 @@
+<!-- Show description of Item in Menu of the Restaurant -->
+<article>
+    <h3> {{ item.name }} </h3>
+    <p> DESCRIPCION <br>
+        {{ item.description }}
+    </p>
+    <p> DISPONIBILIDAD: {{ item.availability }} </p>
+    <p> PRECIO: {{ item.price }} </p>
+
+    <a href="{% url 'menu_item:modify_item' menu_item.pk %}"> MODIFICAR PLATO </a>
+    <a href="{% url 'menu_item:delete_item' menu_item.pk %}"> ELIMINAR PLATO </a>
+</article>

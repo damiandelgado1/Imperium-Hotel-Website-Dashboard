@@ -1,0 +1,21 @@
+<h2> RESTAURANT DE IMPERIUM HOTEL </h2>
+
+<nav>
+    <label> BUSCAR PLATO EN EL MENU </label> <br>
+    <input type="text"> <button> BUSCAR </button>
+</nav>
+
+<section>
+
+    <!-- Display all Item of the Menu in Restaurant of the Hotel -->
+    {% for item in items %}
+        <article>
+            {% comment %} <img src=""> {% endcomment %}
+            <h3> {{ item.name }} </h3>
+            <p> {{ item.availability }} </p>
+            <p> {{ item.price }} </p>
+            <a href="{% url 'menu_item:detail_item' menu_item.pk %}"> ORDENAR PLATO </a>
+        </article>
+    {% endfor %}
+
+</section>

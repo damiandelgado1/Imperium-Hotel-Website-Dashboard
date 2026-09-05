@@ -8,14 +8,14 @@ from .models import Menu_Item
 # Display all Item of the Menu Restaurant
 class ListMenuItem(ListView):
     model = Menu_Item
-    template_name = ""
+    template_name = "restaurant/list_menu_item.html"
     context_object_name = "menu_items"
 
 
 # Show information of the Item in Restaurant
 class DetailMenuItem(DetailView):
     model = Menu_Item
-    template_name = ""
+    template_name = "restaurant/detail_menu_item.html"
     context_object_name = "menu_item"
 
 
@@ -27,7 +27,7 @@ class CreateMenuItem(CreateView):
         "stock",
         "price"
     ]
-    template_name = ""
+    template_name = "restaurant/create_menu_item.html"
     success_url = reverse_lazy("restaurant")
 
 
@@ -38,12 +38,12 @@ class ModifyMenuItem(UpdateView):
         "stock",
         "price"
     ]
-    template_name = ""
+    template_name = "restaurant/modify_menu_item.html"
     success_url = reverse_lazy("restaurant")
 
 
 # Delete a Item of the Menu Restaurant
 class DeleteMenuItem(DeleteView):
     model = Menu_Item
-    template_name = ""
+    template_name = "restaurant/delete_menu_item.html"
     success_url = reverse_lazy("restaurant")
