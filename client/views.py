@@ -50,9 +50,9 @@ def register_client(request):
             first_name = form.cleaned_data["first_name"]
             last_name = form.cleaned_data["last_name"]
             email = form.cleaned_data["email"]
+            is_properly = form.cleaned_data["is_properly"]
             password1 = form.cleaned_data["password1"]
             password2 = form.cleaned_data["password2"]
-            is_properly = form.cleaned_data["is_properly"]
 
             if "@" not in email:
                 messages.add_message(request, messages.INFO, 'Falta el "@" en el Email')
@@ -77,7 +77,7 @@ def register_client(request):
                 )
 
                 messages.add_message(request, messages.INFO, 'Registro completado')
-                return render(request, "home/register.html", {"client": client})
+                return render(request, "home/base.html", {"client": client})
 
         else:
             messages.add_message(request, messages.INFO, 'Revisa los datos ingresados')
@@ -97,7 +97,7 @@ def login_client(request):
 
         if form.is_valid():
             username = form.cleaned_data["username"]
-            password2 = form.cleaned_data["password"]
+            password2 = form.cleaned_data["password2"]
 
             user = authenticate(request, username=username, password=password2)
 
@@ -108,7 +108,7 @@ def login_client(request):
 
             else:
                 messages.add_message(request, messages.INFO, 'El cliente que intenta Iniciar Sesion no existe')
-                return render(request, "home/login.html", {"form": form})
+                return render(request, "home/base.html", {"form": form})
 
         else:
             messages.add_message(request, messages.INFO, 'Revisa los datos ingresados')

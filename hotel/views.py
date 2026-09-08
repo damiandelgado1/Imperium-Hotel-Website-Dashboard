@@ -5,7 +5,7 @@ from room.models import Room
 # Main page of the Hotel
 def main_page(request):
     room = Room.objects.all()
-    return render(request, "home/base.html", {"room": room})
+    return render(request, "home/base.html", {"rooms": room})
 
 
 # Restaurant of the Hotel
