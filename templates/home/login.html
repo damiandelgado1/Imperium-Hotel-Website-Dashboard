@@ -5,28 +5,32 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 
-<h3> INICIAR SESION </h3>
+<div class="login-client">
 
-<form action="" method="POST" class="login-client">
-    {% csrf_token %}
+    <h3> INICIAR SESION </h3>
 
-    <div>
-        <label for="{{ form.username.id_for_label }}"> NOMBRE DE USUARIO </label> <br>
-        {{ form.username }}
-    </div>
-    <br>
+    <form action="" method="POST">
+        {% csrf_token %}
 
-    <div>
-        <label for="{{ form.email.id_for_label }}"> EMAIL </label> <br>
-        {{ form.email }}
-    </div>
-    <br>
+        <div>
+            <label for="{{ form.username.id_for_label }}"> NOMBRE DE USUARIO </label> <br>
+            {{ form.username }}
+        </div>
+        <br>
 
-    <div>
-        <label for="{{ form.password2.id_for_label }}"> CONTRASEÑA </label> <br>
-        {{ form.password2 }}
-    </div>
-    <br>
+        <div>
+            <label for="{{ form.email.id_for_label }}"> EMAIL </label> <br>
+            {{ form.email }}
+        </div>
+        <br>
 
-    <button class="login"> INICIAR SESION </button>
-</form>
+        <div>
+            <label for="{{ form.password2.id_for_label }}"> CONTRASEÑA </label> <br>
+            {{ form.password2 }}
+        </div>
+        <br>
+
+        <button class="login"> INICIAR SESION </button>
+    </form>
+
+</div>
