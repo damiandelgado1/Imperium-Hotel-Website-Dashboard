@@ -1,18 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Imbue:opsz,wght@10..100,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title> Imperium Hotel </title>
 </head>
 <body>
     <!-- Navbar to visit different link -->
     <header>
-        <nav>
-            <a href="{% url 'about_us' %}"> SOBRE NOSOTROS </a>
-            <a href="{% url 'room:list_room' %}"> HABITACIONES </a>
-            <a href="{% url 'client:register_client' %}"> REGISTRARSE </a>
-            <a href="{% url 'client:login_client' %}"> INICIAR SESION </a>
+        <nav class="menu-navegation">
+            <a href="{% url 'about_us' %}" class="link-navegation"> SOBRE NOSOTROS </a>
+            <a href="{% url 'room:list_room' %}" class="link-navegation"> HABITACIONES </a>
+            <p class="name-hotel"> IMPREIUM HOTEL </p>
+            <a href="{% url 'client:register_client' %}" class="link-navegation"> REGISTRARSE </a>
+            <a href="{% url 'client:login_client' %}" class="link-navegation"> INICIAR SESION </a>
         </nav>
     </header>
 
@@ -32,7 +38,7 @@
 
     <!-- Contact Form to contact a the Hotel -->
     <footer>
-        {% block contact %}{% endblock %}
+        {% include 'home/form.html' %}
     </footer>
 </body>
 </html>

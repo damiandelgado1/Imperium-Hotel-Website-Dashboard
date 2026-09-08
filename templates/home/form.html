@@ -1,0 +1,25 @@
+<h3> CONTACTANOS </h3>
+
+<form action="" method="POST" class="contact-client">
+    {% csrf_token %}
+
+    <div>
+        <label for="{{ form.first_name.id_for_label }}"> NOMBRE </label> <br>
+        {{ form.first_name }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.last_name.id_for_label }}"> APELLIDO </label> <br>
+        {{ form.last_name }}
+    </div>
+    <br>
+
+    <div>
+        <label for="{{ form.email.id_for_label }}"> EMAIL </label> <br>
+        {{ form.email }}
+    </div>
+    <br>
+
+    <button class="contact"> CONTACTAR </button>
+</form>

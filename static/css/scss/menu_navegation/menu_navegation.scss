@@ -1,0 +1,15 @@
+.menu-navegation {
+    align-items: center;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.link-navegation {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}

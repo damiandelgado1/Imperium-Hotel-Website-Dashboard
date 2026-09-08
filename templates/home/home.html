@@ -1,17 +1,30 @@
+{% load static %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Imbue:opsz,wght@10..100,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
 {% block content %}
 
-    <h1> IMPERIUM HOTEL </h1>
-    <p> Disfruta de una Estancia Tranquila y Lugar de Trabajo Enfocado </p>
+    <div class="description-hotel">
+        <h1> IMPERIUM HOTEL </h1>
+        <p> Disfruta de una Estancia Tranquila y Lugar de Trabajo Enfocado </p>
+    </div>
 
-    <h3> DISFRUTA DE LAS INSTALACIONES DE IMPERIUM SUITE </h3>
+    <section class="service-hotel">
+        <h3> DISFRUTA DE LAS INSTALACIONES DE IMPERIUM SUITE </h3>
 
-    <!-- Service of the Hotel -->
-    <article>
-        <p> Habitaciones con Muebles de Alta Calidad </p>
-        {% comment %} <img src=""> {% endcomment %}
-    </article>
-    <article>
-        <p> Restaurant con Platos especiales </p>
-        {% comment %} <img src=""> {% endcomment %}
-    </article>
+        <!-- Service of the Hotel -->
+        <div class="card-container">
+            <article class="card-service">
+                <p> Habitaciones con Muebles de Alta Calidad </p>
+                {% comment %} <img src=""> {% endcomment %}
+            </article>
+            <article class="card-service">
+                <p> Restaurant con Platos especiales </p>
+                {% comment %} <img src=""> {% endcomment %}
+            </article>
+        </div>
+    </section>
 {% endblock %}

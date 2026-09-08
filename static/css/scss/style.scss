@@ -1,0 +1,29 @@
+@use './menu_navegation/menu_navegation.scss';
+@use './service/service.scss';
+@use './restaurant/restaurant.scss';
+@use './button/button.scss';
+
+
+body {
+    font-family: Imbue;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.name-hotel {
+    color: white;
+    font-size: 30px;
+}
+
+.description-hotel {
+    color: white;
+    padding: 150px;
+}
+
+.contact-client {
+    margin-left: 575px;
+    position: relative;
+    top: 50px;
+    text-align: left;
+}

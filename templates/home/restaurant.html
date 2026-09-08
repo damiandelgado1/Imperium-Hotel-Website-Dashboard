@@ -1,11 +1,21 @@
+{% load static %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Imbue:opsz,wght@10..100,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
 {% block restaurant %}
 
     <!-- Brief Description of the Restaurant -->
-    <h3> Restaurant de Imperium Hotel </h3>
-    <p> Nuestro Restaurant ofrece una variedad de platos preparados con ingredientes de calidad, en un ambiente comodo y agradable. Una propuesta gastronomica pensada para complementar la estadia y disfrutar de un buen momento </p>
+    <section class="description-restaurant">
+        <h3> Restaurant de Imperium Hotel </h3>
+        <p> Nuestro Restaurant ofrece una variedad de platos preparados con ingredientes de calidad, en un ambiente comodo y agradable. Una propuesta gastronomica pensada para complementar la estadia y disfrutar de un buen momento </p>
 
-    {% comment %} <img src=""> {% endcomment %}
+        {% comment %} <img src=""> {% endcomment %}
 
-    <a href="{% url 'menu_item:list_item' %}"> VISITAR RESTAURANT </a>
+        <a href="{% url 'menu_item:list_item' %}" class="visit-restaurant"> VISITAR RESTAURANT </a>
+
+    </section>
 
 {% endblock %}

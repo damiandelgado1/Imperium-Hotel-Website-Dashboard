@@ -1,0 +1,94 @@
+.menu-navegation {
+  align-items: center;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.link-navegation {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.service-hotel > h3 {
+  font-size: 35px;
+  text-align: center;
+}
+
+.service-hotel {
+  font-size: 20px;
+}
+
+.card-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card-service {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+}
+
+.description-restaurant {
+  font-size: 18px;
+  position: relative;
+  left: 325px;
+  width: 700px;
+}
+
+.visit-restaurant {
+  background-color: black;
+  border-radius: 4px;
+  color: white;
+  padding: 10px;
+  position: relative;
+  top: 30px;
+  text-decoration: none;
+}
+
+.contact {
+  background-color: black;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  font-family: Imbue;
+  font-size: 18px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+body {
+  font-family: Imbue;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.name-hotel {
+  color: white;
+  font-size: 30px;
+}
+
+.description-hotel {
+  color: white;
+  padding: 150px;
+}
+
+.contact-client {
+  margin-left: 575px;
+  position: relative;
+  top: 50px;
+  text-align: left;
+}
+
+/*# sourceMappingURL=style.css.map */
