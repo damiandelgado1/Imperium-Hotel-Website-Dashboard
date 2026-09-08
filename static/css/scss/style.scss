@@ -27,3 +27,24 @@ body {
     top: 50px;
     text-align: left;
 }
+
+.information-hotel {
+    font-size: 18px;
+    margin: 30px;
+    margin-left: 300px;
+    margin-right: 300px;
+    text-align: left;
+    width: 700px;
+}
+
+.information-hotel > .about-hotel {
+    text-align: center;
+}
+
+.return {
+    color: black;
+    position: relative;
+    right: 510px;
+    top: 30px;
+    text-decoration: none;
+}
