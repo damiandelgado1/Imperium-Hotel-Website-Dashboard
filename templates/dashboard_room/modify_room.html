@@ -7,7 +7,7 @@
 
 <h3> MODIFICAR ESTADO DE LA HABITACION {{ room.number }} </h3>
 
-<form action="" method="POST">
+<form action="" method="POST" class="modify-room">
     {% csrf_token %}
 
     <div>
@@ -22,5 +22,5 @@
     </div>
     <br>
 
-    <button> MODIFICAR ESTADO </button>
+    <button class="modify"> MODIFICAR ESTADO </button>
 </form>

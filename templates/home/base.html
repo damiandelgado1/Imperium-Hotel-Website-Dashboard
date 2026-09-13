@@ -14,31 +14,46 @@
     <!-- Navbar to visit different link -->
     <header>
         <nav class="menu-navegation">
-            <a href="{% url 'about_us' %}" class="link-navegation"> SOBRE NOSOTROS </a>
-            <a href="{% url 'room:list_room' %}" class="link-navegation"> HABITACIONES </a>
+            {% if user.is_authenticated and not user.is_staff %}
+                <a href="{% url 'client:logout_client' %}" class="link-navegation"> CERRAR SESION </a>
+                <a href="{% url 'reservation:list_reservation' %}" class="link-navegation"> VER RESERVAS </a>
+            {% elif user.is_staff %}
+                <a href="{% url 'client:logout_client' %}" class="link-navegation"> CERRAR SESION </a>
+            {% else %}
+                <a href="{% url 'client:register_client' %}" class="link-navegation"> REGISTRARSE </a>
+                <a href="{% url 'client:login_client' %}" class="link-navegation"> INICIAR SESION </a>
+            {% endif %}
+
             <p class="name-hotel"> IMPREIUM HOTEL </p>
-            <a href="{% url 'client:register_client' %}" class="link-navegation"> REGISTRARSE </a>
-            <a href="{% url 'client:login_client' %}" class="link-navegation"> INICIAR SESION </a>
+            <a href="{% url 'room:list_room' %}" class="link-navegation"> HABITACIONES </a>
+            <a href="{% url 'about_us' %}" class="link-navegation"> SOBRE NOSOTROS </a>
         </nav>
     </header>
 
     <!-- Description of the Hotel -->
-    <main>
-        {% include 'home/home.html' %}
+    {% if user.is_staff %}
+        <main>
+        
+            <!-- Display all Room availability in the Hotel -->    
+            <section>
+                {% include 'dashboard_room/manage_room.html' %}
+            </section>
 
-        <!-- Display all Room availability in the Hotel -->
-
-        <section>
-            {% block room %}{% endblock %}
-        </section>
-
-        <!-- Link to Restaurant -->
-        {% include "home/restaurant.html" %}
-    </main>
-
-    <!-- Contact Form to contact a the Hotel -->
-    <footer>
-        {% include 'home/form.html' %}
-    </footer>
+    {% else %}
+            {% include 'home/home.html' %}
+        
+            <section class="show-rooms">
+                {% include 'room/list_room.html' %}
+            </section>
+            
+            <!-- Link to Restaurant -->
+            {% include "home/restaurant.html" %}
+        </main>
+        
+        <!-- Contact Form to contact a the Hotel -->
+        <footer>
+            {% include 'home/form.html' %}
+        </footer>
+    {% endif %}
 </body>
 </html>

@@ -5,8 +5,8 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 
-<article>
-    <h3> HABITACION NRO. {{ room.number }} </h3>
+<article class="specification-room">
+    <h3 class="number-room"> HABITACION NRO. {{ room.number }} </h3>
     {% comment %} <img src=""> {% endcomment %}
     <p> {{ room.preview }} </p>
     <p> DESCRIPCION <br>
@@ -17,6 +17,6 @@
     <p> ESTADO DE DISPONIBILIDAD: {{ room.availability }} </p>
     <p> PRECIO DE LA HABITACION: {{ room.price }} </p>
 
-    <a href="{% url 'room:modify_room' room.pk %}"> MODIFICAR ESTADO DE LA HABITACION </a>
-    <a href="{% url 'room:delete_room' room.pk %}"> ELIMINAR HABITACION </a>
+    <a href="{% url 'room:modify_room' room.pk %}" class="room-modify"> MODIFICAR ESTADO DE LA HABITACION </a>
+    <a href="{% url 'room:delete_room' room.pk %}" class="room-delete"> ELIMINAR HABITACION </a>
 </article>

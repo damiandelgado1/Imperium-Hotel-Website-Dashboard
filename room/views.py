@@ -45,7 +45,7 @@ class CreateRoom(CreateView):
         "price"
     ]
     template_name = "dashboard_room/create_room.html"
-    success_url = reverse_lazy("dashboard")
+    success_url = reverse_lazy("home")
 
 
 # Modify state a Room in the Hotel
@@ -56,11 +56,11 @@ class ModifyRoom(UpdateView):
         "price"
     ]
     template_name = "dashboard_room/modify_room.html"
-    success_url = reverse_lazy("dashboard")
+    success_url = reverse_lazy("home")
 
 
 # Delete Room in the Hotel
 class DeleteRoom(DeleteView):
     model = Room
     template_name = "dashboard_room/delete_room.html"
-    success_url = reverse_lazy("dashboard")
+    success_url = reverse_lazy("home")

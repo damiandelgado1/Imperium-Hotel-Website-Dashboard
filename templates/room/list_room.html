@@ -10,15 +10,19 @@
 {% block room %}
 
     <!-- Display all Room in the Hotel -->
-    {% for room in rooms %}
-        <article>
-            {% comment %} <img src=""> {% endcomment %}
-            <h5> Habitacion {{ room.number }} </h5>
-            <p> {{ room.preview }} </p>
-            <p> {{ room.availability }} </p>
-            <p> {{ room.price }} </p>
-            <a href="{% url 'room:detail_room' room.pk %}"> VER MAS </a>
-        </article>
-    {% endfor %}
+    <section class="rooms">
+
+        {% for room in rooms %}
+            <article class="room">
+                {% comment %} <img src=""> {% endcomment %}
+                <h5 class="number-room"> Habitacion {{ room.number }} </h5>
+                <p> {{ room.preview }} </p>
+                <p> {{ room.availability }} </p>
+                <p> {{ room.price }} </p>
+                <a href="{% url 'room:detail_room' room.pk %}" class="detail-room"> VER MAS </a>
+            </article>
+        {% endfor %}
+    
+    </section>
 
 {% endblock %}

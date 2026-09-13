@@ -7,7 +7,7 @@
 
 <h3> CREAR HABITACION </h3>
 
-<form action="" method="POST">
+<form action="" method="POST" class="create-room">
     {% csrf_token %}
 
     <div>
@@ -24,7 +24,7 @@
 
     <div>
         <label for="{{ form.description.id_for_label }}"> DESCRIPCION DE LA HABITACION </label> <br>
-        {{ form.number }}
+        {{ form.description }}
     </div>
     <br>
 
@@ -48,8 +48,9 @@
 
     <div>
         <label for="{{ form.price.id_for_label }}"> PRECIO DE LA HABITACION </label> <br>
+        {{ form.price }}
     </div>
     <br>
 
-    <button> CREAR HABITACION </button>
+    <button class="room-create"> CREAR HABITACION </button>
 </form>

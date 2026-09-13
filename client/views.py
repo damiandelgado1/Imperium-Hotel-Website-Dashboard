@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from .models import Client
+from django.contrib.auth.models import User
 from .forms import Contact, Register, Login
 
 
@@ -49,6 +49,7 @@ def register_client(request):
         if form.is_valid():
             first_name = form.cleaned_data["first_name"]
             last_name = form.cleaned_data["last_name"]
+            username = form.cleaned_data["username"]
             email = form.cleaned_data["email"]
             is_properly = form.cleaned_data["is_properly"]
             password1 = form.cleaned_data["password1"]
@@ -62,22 +63,24 @@ def register_client(request):
                 messages.add_message(request, messages.INFO, 'La contraseña debe ser la misma')
                 return render(request, "home/register.html")
 
-            elif password2 == "":
-                messages.add_message(request, messages.INFO, 'Debe ingresar la contraseña de confirmacion')
-                return render(request, "home/register.html")
-
             else:
-                client = Client.objects.create(
+
+                user = User.objects.create_user(
                     first_name = first_name,
                     last_name = last_name,
+                    username = username,
                     email = email,
-                    password1 = password1,
-                    password2 = password2,
-                    is_properly = is_properly
+                    password = password1
                 )
 
-                messages.add_message(request, messages.INFO, 'Registro completado')
-                return render(request, "home/base.html", {"client": client})
+                login(request, user)
+
+                if is_properly:
+                    user.is_staff = True
+                    user.save()
+
+                messages.add_message(request, messages.INFO, "Registro completado de forma segura")
+                return redirect("home")
 
         else:
             messages.add_message(request, messages.INFO, 'Revisa los datos ingresados')
@@ -97,14 +100,18 @@ def login_client(request):
 
         if form.is_valid():
             username = form.cleaned_data["username"]
-            password2 = form.cleaned_data["password2"]
+            email = form.cleaned_data["email"]
+            password = form.cleaned_data["password2"]
 
-            user = authenticate(request, username=username, password=password2)
+            user = authenticate(request, username=username, password=password)
 
             if user is not None:
                 login(request, user)
                 messages.add_message(request, messages.SUCCESS, 'Inicio de Sesion realizado')
-                return render(request, "home/login.html")
+
+                print("USUARIO:", request.user)
+                print("AUTENTICADO:", request.user.is_authenticated)
+                return redirect("home")
 
             else:
                 messages.add_message(request, messages.INFO, 'El cliente que intenta Iniciar Sesion no existe')

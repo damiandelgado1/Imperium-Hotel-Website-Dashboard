@@ -7,10 +7,10 @@
 
 <h3> ELIMINAR HABITACION Nro. {{ room.number }} </h3>
 
-<form action="" method="POST">
+<form action="" method="POST" class="delete-room">
     {% csrf_token %}
 
     {% comment %} <img src=""> {% endcomment %}
 
-    <button> ELIMINAR HABITACION </button>
+    <button class="delete"> ELIMINAR HABITACION </button>
 </form>

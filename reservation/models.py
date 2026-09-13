@@ -1,11 +1,11 @@
 from django.db import models
-from client.models import Client
+from django.contrib.auth.models import User
 from room.models import Room
 
 
 # Information of Reservation the a Client
 class Reservation(models.Model):
-    client = models.ForeignKey(Client, on_delete=models.CASCADE, verbose_name="Cliente que reservo la Habitacion")
+    client = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="Cliente que reservo la Habitacion")
     room = models.ForeignKey(Room, on_delete=models.CASCADE, verbose_name="Habitacion reservada por el Cliente")
     people = models.IntegerField(verbose_name="Nro. de Personas que entran en la Habitacion")
     enter = models.DateField(verbose_name="Fecha de Entrada")

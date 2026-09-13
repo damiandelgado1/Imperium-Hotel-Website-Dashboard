@@ -6,13 +6,13 @@
 
 
 <!-- Show description of the Room in the Hotel -->
-<article>
-    <h3> {{ room.number }} </h3>
+<article class="specification-room">
+    <h3 class="number-room"> {{ room.number }} </h3>
     <p> {{ room.description }} </p>
     <p> DORMITORIOS: {{ room.bedroom }} </p>
     <p> BAÑOS: {{ room.bathroom }} </p>
     <p> ESTADO DE DISPONIBILIDAD: {{ room.availability }} </p>
     <p> PRECIO: {{ room.price }} </p>
 
-    <a href="{% url 'reservation:create_reservation' %}"> RESERVAR HABITACION </a>
+    <a href="{% url 'reservation:create_reservation' %}" class="create-reservation"> RESERVAR HABITACION </a>
 </article>
