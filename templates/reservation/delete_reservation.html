@@ -7,8 +7,8 @@
 
 <h3> CANCELAR RESERVA EN LA HABITACION Nro. {{ room.number }} </h3>
 
-<form action="" method="POST">
+<form action="" method="POST" class="delete-reservation">
     {% csrf_token %}
 
-    <button> CANCELAR RESERVA </button>
+    <button class="reservation-delete"> CANCELAR RESERVA </button>
 </form>

@@ -5,7 +5,6 @@ from room.models import Room
 
 # Information of Reservation the a Client
 class Reservation(models.Model):
-    client = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="Cliente que reservo la Habitacion")
     room = models.ForeignKey(Room, on_delete=models.CASCADE, verbose_name="Habitacion reservada por el Cliente")
     people = models.IntegerField(verbose_name="Nro. de Personas que entran en la Habitacion")
     enter = models.DateField(verbose_name="Fecha de Entrada")
@@ -13,7 +12,7 @@ class Reservation(models.Model):
     payment = models.DecimalField(max_digits=5, decimal_places=2, verbose_name="Pago del Cliente por la Habitacion")
 
     def __str__(self):
-        return f"Habitacion {self.room} reservada por {self.client}"
+        return f"Habitacion {self.room} reservada"
 
     class Meta:
         verbose_name = "reservations"

@@ -7,14 +7,8 @@
 
 <h3> RESERVAR HABITACION Nro. {{ room.number }} </h3>
 
-<form action="" method="POST">
+<form action="" method="POST" class="reservation-create">
     {% csrf_token %}
-
-    <div>
-        <label for="{{ form.client.id_for_label }}"> CLIENTE QUE RESERVA LA HABITACION </label> <br>
-        {{ form.client }}
-    </div>
-    <br>
 
     <div>
         <label for="{{ form.room.id_for_label }}"> NRO. DE HABITACION QUE RESERVA </label> <br>
@@ -41,9 +35,10 @@
     <br>
 
     <div>
-        <label for="{{ form.price.id_for_label }}"> INGRESE DINERO PARA PAGAR </label> <br>
+        <label for="{{ form.payment.id_for_label }}"> INGRESE DINERO PARA PAGAR </label> <br>
+        {{ form.payment }}
     </div>
     <br>
 
-    <button> REALIZAR RESERVA </button>
+    <button class="confirm-reservation"> REALIZAR RESERVA </button>
 </form>

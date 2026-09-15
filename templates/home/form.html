@@ -1,3 +1,10 @@
+{% load static %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Imbue:opsz,wght@10..100,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
 <h3> CONTACTANOS </h3>
 
 <form action="" method="POST" class="contact-client">
@@ -5,19 +12,19 @@
 
     <div>
         <label for="{{ form.first_name.id_for_label }}"> NOMBRE </label> <br>
-        {{ form.first_name }}
+        <input type="text">
     </div>
     <br>
 
     <div>
         <label for="{{ form.last_name.id_for_label }}"> APELLIDO </label> <br>
-        {{ form.last_name }}
+        <input type="text">
     </div>
     <br>
 
     <div>
         <label for="{{ form.email.id_for_label }}"> EMAIL </label> <br>
-        {{ form.email }}
+        <input type="text">
     </div>
     <br>
 

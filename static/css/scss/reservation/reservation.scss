@@ -1,0 +1,44 @@
+.reservations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.reservation {
+    background-color: #C3C3C3;
+    padding: 10px;
+    height: 230px;
+    width: 470px;
+    text-align: left;
+}
+
+.reservation > .information-reservation {
+    font-size: 18px;
+    margin-left: 240px;
+}
+
+.reservation > .room-reservation {
+    font-size: 22px;
+    margin-left: 240px;
+}
+
+.reservation-information {
+    font-size: 18px;
+    margin-left: 545px;
+    text-align: left;
+}
+
+.reservation-information > .reservation-room {
+    font-size: 26px;
+}
+
+.reservation-create {
+    font-size: 18px;
+    margin-left: 575px;
+    text-align: left;
+}
+
+.delete-reservation {
+    text-align: center;
+}

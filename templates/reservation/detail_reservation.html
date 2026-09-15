@@ -5,8 +5,8 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 
-<article>
-    <h3> RESERVA DE LA HABITACION Nro. {{ room.number }} </h3>
+<article class="reservation-information">
+    <h3 class="reservation-room"> RESERVA DE LA HABITACION Nro. {{ room.number }} </h3>
     {% comment %} <img src=""> {% endcomment %}
     <p> Habitacion reservada por {{ client.first_name }} </p>
     <p> Nro. de Personas que asisten: {{ reservation.people }} </p>
@@ -14,5 +14,5 @@
     <p> Fecha de Salida: {{ reservation.exit }} </p>
     <p> Total pagado: {{ reservation.payment }} </p>
 
-    <a href="{% url 'reservation:delete_reservation' reservation.pk %}"> CANCELAR RESERVA </a>
+    <a href="{% url 'reservation:delete_reservation' reservation.pk %}" class="cancel-reservation"> CANCELAR RESERVA </a>
 </article>

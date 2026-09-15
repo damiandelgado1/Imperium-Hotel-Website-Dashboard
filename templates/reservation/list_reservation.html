@@ -9,15 +9,19 @@
 
 {% block reservation %}
 
-    {% for reservation in reservations %}
-        <article>
-            {% comment %} <img src=""> {% endcomment %}
-            <h3> Reserva en la Habitacion Nro. {{ room.number }} </h3>
-            <p> Reservado por: {{ client.first_name }} </p>
-            <p> Fecha de Entrada: {{ reservation.enter }} </p>
-            <p> Fecha de Salida: {{ reservation.exit }} </p>
-            <a href="{% url 'reservation:detail_reservation' reservation.pk %}"> VER RESERVA </a>
-        </article>
-    {% endfor %}
+    <section class="reservations">
+
+        {% for reservation in reservations %}
+            <article class="reservation">
+                {% comment %} <img src=""> {% endcomment %}
+                <h3 class="room-reservation"> Reserva en la Habitacion Nro. {{ room.number }} </h3>
+                <p class="information-reservation"> Reservado por: {{ client.first_name }} </p>
+                <p class="information-reservation"> Fecha de Entrada: {{ reservation.enter }} </p>
+                <p class="information-reservation"> Fecha de Salida: {{ reservation.exit }} </p>
+                <a href="{% url 'reservation:detail_reservation' reservation.pk %}" class="detail-reservation"> VER RESERVA </a>
+            </article>
+        {% endfor %}
+
+    </section>
 
 {% endblock %}

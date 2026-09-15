@@ -175,6 +175,58 @@
   padding: 10px;
 }
 
+.detail-reservation {
+  background-color: black;
+  border-radius: 4px;
+  color: white;
+  padding: 10px;
+  position: relative;
+  left: 390px;
+  top: 10px;
+  text-decoration: none;
+}
+
+.create-reservation {
+  background-color: black;
+  border-radius: 4px;
+  color: white;
+  padding: 10px;
+  position: relative;
+  top: 10px;
+  text-decoration: none;
+}
+
+.confirm-reservation {
+  background-color: black;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  font-family: Imbue;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.cancel-reservation {
+  background-color: black;
+  border-radius: 4px;
+  color: white;
+  padding: 10px;
+  position: relative;
+  top: 20px;
+  text-decoration: none;
+}
+
+.reservation-delete {
+  background-color: black;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  font-family: Imbue;
+  font-size: 18px;
+  padding: 10px;
+  text-decoration: none;
+}
+
 .show-rooms {
   background-color: black;
   max-height: 570px;
@@ -268,6 +320,51 @@
   font-size: 20px;
   margin-left: 518px;
   text-align: left;
+}
+
+.reservations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.reservation {
+  background-color: #C3C3C3;
+  padding: 10px;
+  height: 230px;
+  width: 470px;
+  text-align: left;
+}
+
+.reservation > .information-reservation {
+  font-size: 18px;
+  margin-left: 240px;
+}
+
+.reservation > .room-reservation {
+  font-size: 22px;
+  margin-left: 240px;
+}
+
+.reservation-information {
+  font-size: 18px;
+  margin-left: 545px;
+  text-align: left;
+}
+
+.reservation-information > .reservation-room {
+  font-size: 26px;
+}
+
+.reservation-create {
+  font-size: 18px;
+  margin-left: 575px;
+  text-align: left;
+}
+
+.delete-reservation {
+  text-align: center;
 }
 
 body {

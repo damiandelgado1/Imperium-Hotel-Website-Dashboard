@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Data and Specification a Room in the Hotel
 class Room(models.Model):
     number = models.IntegerField(verbose_name="Nro. de la Habitacion")

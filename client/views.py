@@ -28,16 +28,16 @@ def contact(request):
                 }
 
                 messages.add_message(request, messages.SUCCESS, 'Gracias por Contactar al Hotel, su respuesta llegara pronto')
-                return render(request, "home/base.html", context)
+                return render(request, "home/form.html", context, {"form": form})
 
         else:
             messages.add_message(request, messages.INFO, 'Revisa los datos ingresados')
-            return render(request, "home/register.html", {"form": form})
+            return render(request, "home/base.html", {"form": form})
 
     else:
         form = Contact()
         messages.add_message(request, messages.INFO, 'Indique sus datos de contacto para contactar al Hotel')
-        return render(request, "home/base.html", {"form": form})
+        return render(request, "home/form.html", {"form": form})
 
 
 # Client register in the Hotel to create Account
