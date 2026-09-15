@@ -38,3 +38,89 @@
     font-size: 18px;
     padding: 10px;
 }
+
+.detail-room {
+    background-color: black;
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.edit-room {
+    background-color: black;
+    border-radius: 4px;
+    color: white;
+    font-size: 17px;
+    padding: 10px;
+    position: relative;
+    left: 475px;
+    top: 35px;
+    text-decoration: none;
+}
+
+.create-room-dashboard {
+    background-color: black;
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    position: relative;
+    top: 25px;
+    text-decoration: none;
+}
+
+.room-create {
+    background-color: black;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    font-family: Imbue;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.room-modify {
+    background-color: black;
+    border-radius: 4px;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    position: relative;
+    left: 15px;
+    top: 30px;
+    text-decoration: none;
+}
+
+.modify {
+    background-color: black;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    font-family: Imbue;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.room-delete {
+    background-color: black;
+    border-radius: 4px;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    position: relative;
+    left: 30px;
+    top: 30px;
+    text-decoration: none;
+}
+
+.delete {
+    background-color: black;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    font-family: Imbue;
+    font-size: 18px;
+    padding: 10px;
+}

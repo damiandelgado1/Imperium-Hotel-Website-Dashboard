@@ -5,20 +5,26 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 
-<h3> HABITACIONES DISPONIBLES </h3>
+<h3 class="rooms-availability-dashboard"> HABITACIONES DISPONIBLES </h3>
 
 {% block room %}
 
-    <a href="{% url 'room:create_room' %}"> CREAR HABITACION </a>
+    <a href="{% url 'room:create_room' %}" class="create-room-dashboard"> CREAR HABITACION </a>
 
-    {% for room in rooms %}
-        <article class="room">
-            {% comment %} <img src=""> {% endcomment %}
-            <h3> HABITACION NRO. {{ room.number }} </h3>
-            <p> ESTADO DE DISPONIBILIDAD: {{ room.availability }} </p>
-            <p> PRECIO: {{ room.price }} </p>
-            <a href="{% url 'room:edit_room' room.pk %}" class="edit-room"> VER HABITACION </a>
-        </article>
-    {% endfor %}
+    <section class="rooms-dashboard">
+
+        {% for room in rooms %}
+
+            <article class="room-dashboard">
+                {% comment %} <img src=""> {% endcomment %}
+                <h3 class="room-number"> HABITACION NRO. {{ room.number }} </h3>
+                <p class="room-specification"> ESTADO DE DISPONIBILIDAD: {{ room.availability }} </p>
+                <p class="room-specification"> PRECIO: {{ room.price }} </p>
+                <a href="{% url 'room:edit_room' room.pk %}" class="edit-room"> VER HABITACION </a>
+            </article>
+
+        {% endfor %}
+
+    </section>
 
 {% endblock %}
